@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>购物车-我滴购物车</title>
+		
+		<!--最新版本的 Bootstrap 核心 CSS 文件--> 
+		<!--<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+		<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+		<!--<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<!--<script src="bootstrap/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+		<link rel="stylesheet" type="text/css" href="css/iconfont_f.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cartStyle.css"/>
+		<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+		<script  type="text/javascript" src="js/cart.js"></script>
+	</head>
+	<body>
+		<header>
+			<div>
+				<i class="iconfont icon-meizu"></i>
+				<ul>
+					<li>购物车</li>
+					<li>&nbsp;&nbsp;>&nbsp;&nbsp;确认订单</li>
+					<li>&nbsp;&nbsp;>&nbsp;&nbsp;在线支付</li>
+					<li>&nbsp;&nbsp;>&nbsp;&nbsp;完成</li>
+				</ul>
+				<ol>
+					<li><a href="ordercenter.html">我的订单</a></li>
+					<li id="showhide">
+						<a>用户13813...的商城<span id="jiantou">&or;</span></a>
+						<ul id="shop">
+							<li>地址管理</li>
+							<li>我的收藏</li>
+							<li>我的回购券</li>
+							<li>问题反馈</li>
+							<li>退出</li>
+						</ul>
+					</li>
+				</ol>
+			</div>
+		</header>
+		<div class="things">
+			<section class="shopping"></section>
+			<section class="pay"></section>
+		</div>
+		<div class="mzcontainer buy">
+			<table>
+				<tbody>
+					<tr>
+						<td class="quanxuan">
+							<label for="quanxuan1"><input type="checkbox" name="quanxuan1" id="quanxuan1" value=""  class="select_all"/>全选</label>
+						</td>
+						<td class="shangpin">商品</td>
+						<td class="danjia">单价(元)</td>
+						<td class="shuliang">数量</td>
+						<td class="xiaoji">小计(元)</td>
+						<td class="caozuo">操作</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="gouxuanmeizu">
+				<label for="quanxuan2"><input type="checkbox" name="quanxuan2" id="quanxuan2" value="" class="select_this"/>魅族</label>
+			</div>
+			<div class="shangpingouxuan">
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								<input type="checkbox" name="" id="quanxuan3" value="" class="select_this" checked=""/>
+								<img src="img/pro6plus.jpg"/>
+							</td>
+							<td>
+								<a>魅族PRO 6 Plus</a><br/>
+								<a>公开版 深空灰 64GB</a>
+							</td>
+							<td><p>￥2699.00</p></td>
+							<td>
+								<div class="left">
+									<button type="button" id="leftbtn" onclick="cut()">-</button>
+								</div>
+								<div class="quantity">
+									<input type="text" value="1" id="quantity1" onblur="number()" ></input>
+								</div>
+								<div class="right">
+									<button type="button" id="rightbtn" onclick="add()">+</button>
+								</div>
+							</td>
+							<td>
+								<span>￥</span><span id="money">2699.00</span>
+							</td>
+							<td><a href="">+</a></td>
+						</tr>
+					</tbody>
+				</table>
+				
+			</div>
+			<div class="pay">
+				<div class="quanxuan_zongji">
+					<div>
+						<label for="quanxuan4"><input type="checkbox" name="quanxuan4" id="quanxuan4" value=""  class="select_all"/>全选</label>
+						<span class="span1">删除选中的商品</span>
+						<span class="span2">共&nbsp;<span id="totalcount">1</span>&nbsp;件商品，已选择&nbsp;<span id="totalselected">1</span>&nbsp;件</span>
+					</div>
+					
+				</div>
+				<div class="jiesuan">
+					<span>已优惠<span id="offer">0.00</span>元，合计(不含运费)：<span>￥</span><span id="totalpay">2699.00</span></span>
+					<button id="go">去结算</button>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<section>
+				<ul>
+					<li><i class="iconfont icon-shunfengmendian01"></i><span>顺丰包邮</span></li>
+					<li><i class="iconfont icon-shandian"></i><span>100+ 城市次日送达</span></li>
+					<li><i class="iconfont icon-fanhui"></i><span>7 天无理由退货</span></li>
+					<li><i class="iconfont icon-xunhuan"></i><span>15 天换货保障</span></li>
+					<li><i class="iconfont icon-banshou"></i><span>1 年免费保修</span></li>
+					<li><i class="iconfont icon-dingwei"></i><span>2300+ 线下体验店</span></li>
+					<li><i class="iconfont icon-computer"></i><span>远程支持服务</span></li>
+					<li><i class="iconfont icon-fangzi1"></i><span>上门快修</span></li>
+				</ul>
+				<div>
+					<p>24小时全国服务热线</p>
+					<a href="">400-788-3333</a>
+					<img src="img/hotline_f.png"/>
+				</div>
+			</section>
+			<div>
+				<ul>
+					<li><a href="">了解魅族</a></li>
+					<li><a href="">加入我们</a></li>
+					<li><a href="">联系我们</a></li>
+					<li><a href="">Flyme</a></li>
+					<li><a href="">魅族社区</a></li>
+					<li><a href="">天猫旗舰店</a></li>
+					<li><a href="">问题反馈</a></li>
+					<li><a href="">线上销售授权名单公示</a></li>
+				</ul>
+				<span>
+					<a href="javascript: ;">©2017 Meizu Telecom Equipment Co., Ltd. All rights reserved.</a>
+					<a href="javascript: ;">粤ICP备13003602号-2</a>
+					<a href="javascript: ;">粤B2-20130198</a>
+					<a href="javascript: ;">营业执照</a>
+					<a href="javascript: ;">法律声明</a>
+					<a href="javascript: ;">粤公网安备 44049102496009 号</a>
+					<a href="javascript: ;" class="iconfont icon-dunpai"></a>
+					<a href="javascript: ;"  class="iconfont icon-weibiaoti1"></a>
+					<a href="javascript: ;"  class="iconfont icon-chengxinguanjia"></a>
+					<a href="javascript: ;" class="iconfont icon-qqkongjian fr right-icon" id="iconweibo"></a>
+					<a href="javascript: ;" class="iconfont icon-iconfontweixin fr right-icon" id="iconweixin"></a>
+					<a href="javascript: ;" class="iconfont icon-weibo fr right-icon" id="iconqzone"></a>
+				</span>
+			</div>
+		</div>
+	</body>
+</html>
